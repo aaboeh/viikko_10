@@ -29,16 +29,16 @@ public class UserStorage {
 
     public void addUser(User user) {
         users.add(user);
-        //sortUsers();
+        sortUsers();
     }
 
-    /*public void sortUsers() {
+    public void sortUsers() {
         Collections.sort(users, new Comparator<User>() {
             public int compare(User user1, User user2) {
                 return user1.getLastName().compareTo(user2.getLastName());
             }
         });
-    }*/
+    }
 
     public void loadUsers(Context context) {
         try {
