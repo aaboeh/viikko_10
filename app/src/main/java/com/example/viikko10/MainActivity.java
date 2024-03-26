@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToUserList(View view) {
-        Intent intent = new Intent(this, ListUserInRecycleViewActivity.class);
+        Intent intent = new Intent(this, ListUserActivity.class);
         startActivity(intent);
     }
     public void loadUsers() {

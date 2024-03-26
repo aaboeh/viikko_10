@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListUserInRecycleViewActivity extends AppCompatActivity {
+public class ListUserActivity extends AppCompatActivity {
 
     private UserStorage ustorage;
     private RecyclerView recyclerView;
