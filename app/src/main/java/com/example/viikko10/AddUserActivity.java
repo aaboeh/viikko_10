@@ -65,10 +65,10 @@ public class AddUserActivity extends AppCompatActivity {
 
         User user = new User(firstName, lastName, email, degreeProgram, degrees);
         UserStorage.getInstance().addUser(user);
-        saveUsers(context);
+        UserStorage.getInstance().saveUsers(context);
     }
 
-    public void saveUsers(Context context) {
+    /*public void saveUsers(Context context) {
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
             userWriter.writeObject(UserStorage.getInstance().getUsers());
@@ -76,5 +76,5 @@ public class AddUserActivity extends AppCompatActivity {
         } catch (IOException e) {
             System.out.println("Käyttäjien tallentaminen ei onnistunut");
         }
-    }
+    }*/
 }

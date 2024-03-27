@@ -5,6 +5,7 @@ import android.content.Context;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -38,6 +39,16 @@ public class UserStorage {
                 return user1.getLastName().compareTo(user2.getLastName());
             }
         });
+    }
+
+    public void saveUsers(Context context) {
+        try {
+            ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
+            userWriter.writeObject(users);
+            userWriter.close();
+        } catch (IOException e) {
+            System.out.println("Käyttäjien tallentaminen ei onnistunut");
+        }
     }
 
     public void loadUsers(Context context) {
