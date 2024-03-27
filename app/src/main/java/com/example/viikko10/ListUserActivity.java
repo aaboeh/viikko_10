@@ -22,13 +22,6 @@ public class ListUserActivity extends AppCompatActivity {
 
         ustorage = UserStorage.getInstance();
         ArrayList<User> users = ustorage.getUsers();
-        Collections.sort(users, new Comparator<User>() {
-            @Override
-            public int compare(User user1, User user2) {
-                return user1.getLastName().compareTo(user2.getLastName());
-            }
-        });
-
         recyclerView = findViewById(R.id.rvUserView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), users));
